@@ -11,6 +11,7 @@ License: 	GPL
 Group: 		Development/Perl
 Url:		http://search.cpan.org/dist/%{module}
 Source:		http://search.cpan.org/CPAN/authors/id/A/AL/ALLENDAY/%{module}-%{version}.tar.gz
+BuildRoot: 	%{_tmppath}/%{name}-buildroot
 %if %{mdkversion} < 1010
 Buildrequires:perl-devel
 %endif
