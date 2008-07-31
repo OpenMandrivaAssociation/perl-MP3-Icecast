@@ -1,7 +1,7 @@
 %define	name	perl-%{module}
 %define	module	MP3-Icecast
 %define	version	0.02
-%define	release	%mkrel 11
+%define	release	%mkrel 12
 
 Summary:	MP3::Icecast - Generate Icecast streams
 Name: 		%{name}
