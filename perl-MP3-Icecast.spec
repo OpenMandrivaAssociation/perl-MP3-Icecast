@@ -1,23 +1,23 @@
-%define	name	perl-%{module}
-%define	module	MP3-Icecast
-%define	version	0.02
-%define	release	%mkrel 12
+%define	upstream_name	 MP3-Icecast
+%define	upstream_version 0.02
+
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
 Summary:	MP3::Icecast - Generate Icecast streams
-Name: 		%{name}
-Version: 	%{version}
-Release:	%{release} 
 License: 	GPL
 Group: 		Development/Perl
-Url:		http://search.cpan.org/dist/%{module}
-Source:		http://search.cpan.org/CPAN/authors/id/A/AL/ALLENDAY/%{module}-%{version}.tar.gz
-BuildRoot: 	%{_tmppath}/%{name}-buildroot
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://search.cpan.org/CPAN/authors/id/A/AL/ALLENDAY/%{upstream_name}-%{upstream_version}.tar.gz
+
 %if %{mdkversion} < 1010
 Buildrequires:perl-devel
 %endif
 BuildRequires:  perl-MP3-Info
 BuildRequires:  perl-URI
 BuildArch:	noarch
+BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}
 
 Provides:      perl-mp3-icecast
 Obsoletes:     perl-mp3-icecast
@@ -26,7 +26,7 @@ Obsoletes:     perl-mp3-icecast
 MP3::Icecast - Generate Icecast streams, as well as M3U and PLSv2 playlists.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 
@@ -47,4 +47,3 @@ rm -rf $RPM_BUILD_ROOT
 %doc README Changes
 %{perl_vendorlib}/MP3
 %_mandir/man3/*
-
