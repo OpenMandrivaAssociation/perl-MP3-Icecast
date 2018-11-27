@@ -28,9 +28,6 @@ MP3::Icecast - Generate Icecast streams, as well as M3U and PLSv2 playlists.
 CFLAGS="%{optflags}" perl Makefile.PL INSTALLDIRS=vendor
 %make
 
-%check
-make test
-
 %install
 %makeinstall_std
 
